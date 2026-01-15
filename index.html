@@ -13,180 +13,216 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Custom Cursor -->
+    <!-- Custom Cursor - Only for Desktop -->
     <div class="cursor"></div>
     <div class="cursor-ring"></div>
 
-    <!-- Terminal Theme -->
-    <div class="terminal-container">
-      <div class="terminal">
-        <div class="prompt-line">
-          nikitha@portfolio:~$ <span class="command">cat intro.txt</span>
-        </div>
-
-        <div class="intro-title">
-          I am a
-          <span class="highlight" id="role">Cybersecurity Researcher</span
-          ><span class="cursor-blink"></span>
-        </div>
-
-        <p class="intro-description">
-          Passionate about cybersecurity, CTF competitions, and exploring the
-          depths of cyber threats. Building secure solutions through code and
-          research.
-        </p>
-      </div>
-    </div>
-
     <main class="container">
-      <!-- Profile Photo Card -->
-      <section class="card profile-photo">
-        <h2>Profile</h2>
-        <div class="photo-upload-area">
-          <img
-            id="profileImg"
-            src="./assets/profile.jpg"
-            alt="Profile Photo"
-            class="profile-image"
-          />
-        </div>
-        <div class="profile-info">
-          <h3>Nikitha</h3>
-          <p class="role-text">Cybersecurity Researcher</p>
-        </div>
-      </section>
+      <!-- Sidebar Profile Section -->
+      <aside class="sidebar">
+        <div class="profile-card">
+          <div class="profile-image-wrapper">
+            <img
+              id="profileImg"
+              src="./assets/profile.jpg"
+              alt="Nikitha"
+              class="profile-image"
+            />
+          </div>
+          <div class="profile-info">
+            <h1>Nikitha</h1>
+            <p class="role-text" id="role">Cybersecurity Researcher</p>
+          </div>
 
-      <!-- About Card -->
-      <section class="card about">
-        <h2>About Me</h2>
-        <h3>Education</h3>
-        <div class="education">
-          <ul>
-            <li>🎓 University: Rajalakshmi Engineering College</li>
-            <li>💻 Educations: B.E CSE (Cyber Security)</li>
-            <li>📘 2nd Year</li>
-            <li>CGPA : 8.15</li>
-          </ul>
-        </div>
-      </section>
+          <div class="quick-info">
+            <div class="info-item">
+              <span class="label">University</span>
+              <span class="value">Rajalakshmi Eng. College</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Degree</span>
+              <span class="value">B.E CSE (Cyber Security)</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Year</span>
+              <span class="value">2nd Year</span>
+            </div>
+            <div class="info-item">
+              <span class="label">CGPA</span>
+              <span class="value">8.15</span>
+            </div>
+          </div>
 
-      <!-- Achievements Card -->
-      <section class="card achievements-card">
-        <h2>Achievements</h2>
-        <div class="achievement-item">
-          <span class="achievement-icon">🏆</span>
-          <div class="achievement-content">
-            <p class="achievement-title">2nd Runner-up</p>
-            <p class="achievement-desc">What's The Flag CTF 2025</p>
+          <div class="social-sidebar">
+            <a href="https://linkedin.com/in/nikitha6427" target="_blank" class="social-icon" title="LinkedIn">💼</a>
+            <a href="https://github.com/nikitha6427" target="_blank" class="social-icon" title="GitHub">💻</a>
+            <a href="https://medium.com/@nikitha7390" target="_blank" class="social-icon" title="Medium">��</a>
+            <a href="https://tryhackme.com/p/nikitha3579" target="_blank" class="social-icon" title="TryHackMe">🔒</a>
           </div>
         </div>
-        <div class="achievement-item">
-          <span class="achievement-icon">🥇</span>
-          <div class="achievement-content">
-            <p class="achievement-title">7th Position</p>
-            <p class="achievement-desc">YukthiCTF 2.0 Grand Finale</p>
-          </div>
-        </div>
-        <div class="achievement-item">
-          <span class="achievement-icon">⭐</span>
-          <div class="achievement-content">
-            <p class="achievement-title">Finalist</p>
-            <p class="achievement-desc">UST Gencys CTF 2025</p>
-          </div>
-        </div>
-        <div class="achievement-item">
-          <span class="achievement-icon">🎯</span>
-          <div class="achievement-content">
-            <p class="achievement-title">Top 35</p>
-            <p class="achievement-desc">root@localhost CTF</p>
-          </div>
-        </div>
-        <div class="achievement-item">
-          <span class="achievement-icon">📊</span>
-          <div class="achievement-content">
-            <p class="achievement-title">Top 4%</p>
-            <p class="achievement-desc">TryHackMe</p>
-          </div>
-        </div>
-      </section>
+      </aside>
 
-      <!-- Technical Stack Column -->
-      <section class="card tech-stack">
-        <h2>Technical Stack</h2>
-        <div class="stack-category">
-          <h4>Languages</h4>
-          <div class="stack-items">
-            <span class="stack-item">Python</span>
-            <span class="stack-item">Java</span>
-            <span class="stack-item">C</span>
-            <span class="stack-item">JavaScript</span>
-            <span class="stack-item">Bash</span>
+      <!-- Main Content Section -->
+      <section class="content">
+        <!-- Terminal Theme -->
+        <div class="card terminal-card">
+          <div class="terminal">
+            <div class="prompt-line">
+              nikitha@portfolio:~$ <span class="command">cat intro.txt</span>
+            </div>
+            <div class="intro-title">
+              I am a
+              <span class="highlight" id="roleDisplay">Cybersecurity Researcher</span
+              ><span class="cursor-blink"></span>
+            </div>
+            <p class="intro-description">
+              Passionate about cybersecurity, CTF competitions, and exploring the
+              depths of cyber threats. Building secure solutions through code and
+              research.
+            </p>
           </div>
         </div>
 
-        <div class="stack-category">
-          <h4>Security Tools</h4>
-          <div class="stack-items">
-            <span class="stack-item">Burp Suite</span>
-            <span class="stack-item">Metasploit</span>
-            <span class="stack-item">Wireshark</span>
-            <span class="stack-item">Nmap</span>
-            <span class="stack-item">Kali Linux</span>
+        <!-- Achievements & Tech Stack in Grid -->
+        <div class="grid-row">
+          <!-- Achievements -->
+          <div class="card achievements-card">
+            <h2>Achievements</h2>
+            <div class="achievement-item">
+              <span class="achievement-icon">🏆</span>
+              <div class="achievement-content">
+                <p class="achievement-title">2nd Runner-up</p>
+                <p class="achievement-desc">What's The Flag CTF 2025</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-icon">🥇</span>
+              <div class="achievement-content">
+                <p class="achievement-title">7th Position</p>
+                <p class="achievement-desc">YukthiCTF 2.0 Grand Finale</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-icon">⭐</span>
+              <div class="achievement-content">
+                <p class="achievement-title">Finalist</p>
+                <p class="achievement-desc">UST Gencys CTF 2025</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-icon">🎯</span>
+              <div class="achievement-content">
+                <p class="achievement-title">Top 35</p>
+                <p class="achievement-desc">root@localhost CTF</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-icon">📊</span>
+              <div class="achievement-content">
+                <p class="achievement-title">Top 4%</p>
+                <p class="achievement-desc">TryHackMe</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Tech Stack -->
+          <div class="card quick-tech">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+              <div class="skill-tag python">Python</div>
+              <div class="skill-tag java">Java</div>
+              <div class="skill-tag c">C</div>
+              <div class="skill-tag js">JavaScript</div>
+              <div class="skill-tag bash">Bash</div>
+              <div class="skill-tag burp">Burp Suite</div>
+              <div class="skill-tag metasploit">Metasploit</div>
+              <div class="skill-tag wireshark">Wireshark</div>
+              <div class="skill-tag nmap">Nmap</div>
+              <div class="skill-tag kali">Kali Linux</div>
+            </div>
           </div>
         </div>
 
-        <div class="stack-category">
-          <h4>Specializations</h4>
-          <div class="stack-items">
-            <span class="stack-item">Penetration Testing</span>
-            <span class="stack-item">Web Security</span>
-            <span class="stack-item">Network Security</span>
-            <span class="stack-item">CTF Challenges</span>
-            <span class="stack-item">Vulnerability Analysis</span>
+        <!-- Full Technical Stack -->
+        <div class="card tech-stack">
+          <h2>Technical Stack</h2>
+          <div class="tech-grid">
+            <div class="stack-category">
+              <h4>Languages</h4>
+              <div class="stack-items">
+                <span class="stack-item lang-python">Python</span>
+                <span class="stack-item lang-java">Java</span>
+                <span class="stack-item lang-c">C</span>
+                <span class="stack-item lang-js">JavaScript</span>
+                <span class="stack-item lang-bash">Bash</span>
+              </div>
+            </div>
+
+            <div class="stack-category">
+              <h4>Security Tools</h4>
+              <div class="stack-items">
+                <span class="stack-item tool-burp">Burp Suite</span>
+                <span class="stack-item tool-metasploit">Metasploit</span>
+                <span class="stack-item tool-wireshark">Wireshark</span>
+                <span class="stack-item tool-nmap">Nmap</span>
+                <span class="stack-item tool-kali">Kali Linux</span>
+              </div>
+            </div>
+
+            <div class="stack-category">
+              <h4>Specializations</h4>
+              <div class="stack-items">
+                <span class="stack-item spec-pentest">Penetration Testing</span>
+                <span class="stack-item spec-web">Web Security</span>
+                <span class="stack-item spec-network">Network Security</span>
+                <span class="stack-item spec-ctf">CTF Challenges</span>
+                <span class="stack-item spec-vuln">Vulnerability Analysis</span>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
 
-      <!-- Social Links Card -->
-      <section class="card social">
-        <h2>Connect With Me</h2>
-        <div class="social-links">
-          <a
-            href="https://linkedin.com/in/nikitha"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link linkedin"
-          >
-            <span class="icon">💼</span>
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/nikitha"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link github"
-          >
-            <span class="icon">💻</span>
-            GitHub
-          </a>
-          <a
-            href="https://medium.com/@nikitha"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link medium"
-          >
-            <span class="icon">📝</span>
-            Medium
-          </a>
-          <a
-            href="https://tryhackme.com/p/nikitha"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link tryhackme"
-          >
-            <span class="icon">🔒</span>
-            TryHackMe
-          </a>
+        <!-- Social Links -->
+        <div class="card social">
+          <h2>Connect</h2>
+          <div class="social-links">
+            <a
+              href="https://linkedin.com/in/nikitha6427"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link linkedin"
+            >
+              <span class="icon">💼</span>
+              <span class="name">LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/nikitha6427"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link github"
+            >
+              <span class="icon">💻</span>
+              <span class="name">GitHub</span>
+            </a>
+            <a
+              href="https://medium.com/@nikitha7390"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link medium"
+            >
+              <span class="icon">📝</span>
+              <span class="name">Medium</span>
+            </a>
+            <a
+              href="https://tryhackme.com/p/nikitha3579"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link tryhackme"
+            >
+              <span class="icon">🔒</span>
+              <span class="name">TryHackMe</span>
+            </a>
+          </div>
         </div>
       </section>
     </main>
@@ -203,6 +239,7 @@
       ];
 
       const roleEl = document.getElementById("role");
+      const roleDisplayEl = document.getElementById("roleDisplay");
       let roleIndex = 0;
       let charIndex = 0;
       let typing = true;
@@ -211,7 +248,9 @@
         const currentRole = roles[roleIndex];
 
         if (typing) {
-          roleEl.textContent = currentRole.slice(0, charIndex + 1);
+          const text = currentRole.slice(0, charIndex + 1);
+          roleEl.textContent = text;
+          roleDisplayEl.textContent = text;
           charIndex++;
           if (charIndex === currentRole.length) {
             typing = false;
@@ -219,7 +258,9 @@
             return;
           }
         } else {
-          roleEl.textContent = currentRole.slice(0, charIndex - 1);
+          const text = currentRole.slice(0, charIndex - 1);
+          roleEl.textContent = text;
+          roleDisplayEl.textContent = text;
           charIndex--;
           if (charIndex === 0) {
             typing = true;
@@ -231,6 +272,16 @@
       }
 
       typeLoop();
+
+      // Disable cursor on mobile
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+
+      if (isMobile()) {
+        document.querySelector(".cursor").style.display = "none";
+        document.querySelector(".cursor-ring").style.display = "none";
+      }
     </script>
   </body>
 </html>
