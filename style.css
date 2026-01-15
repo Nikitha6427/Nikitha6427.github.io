@@ -1,146 +1,470 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+  font-family: "JetBrains Mono", "Courier New", monospace;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b0f14, #000000 70%);
+  color: white;
+  overflow-x: hidden;
 }
 
+/* Terminal Theme */
+.terminal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 50vh;
+}
+
+.terminal {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(10, 14, 20, 0.95);
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(46, 230, 166, 0.2);
+}
+
+.prompt-line {
+  color: #2ee6a6;
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.command {
+  color: #2ee6a6;
+  font-weight: 600;
+}
+
+.intro-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 12px 0 10px;
+  color: white;
+}
+
+.highlight {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+.intro-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #8b949e;
+  max-width: 780px;
+  margin: 15px 0;
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background: #58a6ff;
+  margin-left: 6px;
+  animation: blink-cursor 1s steps(2, start) infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink-cursor {
+  to {
+    visibility: hidden;
+  }
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 150, 255, 0.1) 0%,
+    rgba(10, 30, 60, 0) 100%
+  );
+  border-bottom: 2px solid rgba(0, 200, 255, 0.3);
+  display: none;
+}
+
+/* Container - Vertical Stack */
 .container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 60px 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    max-width: 600px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 2.5em;
+/* Cards */
+.card {
+  border: 1px solid rgba(46, 230, 166, 0.3);
+  border-radius: 8px;
+  padding: 30px;
+  background: rgba(10, 20, 40, 0.6);
+  box-shadow: 0 0 20px rgba(46, 230, 166, 0.1);
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
-.subtitle {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 1.1em;
+.card:hover {
+  border-color: rgba(46, 230, 166, 0.6);
+  box-shadow: 0 0 30px rgba(46, 230, 166, 0.2);
+  transform: translateY(-5px);
 }
 
-.about-section {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    text-align: left;
-    border-left: 4px solid #667eea;
+.card h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #2ee6a6;
 }
 
-.about-section h2 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.5em;
+/* Profile Photo Card */
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.about-section p {
-    color: #555;
-    line-height: 1.8;
-    font-size: 1em;
+.photo-upload-area {
+  position: relative;
+  margin: 20px 0;
+}
+
+.profile-image {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 3px solid rgba(46, 230, 166, 0.5);
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+  border-color: rgba(46, 230, 166, 0.9);
+  box-shadow: 0 0 20px rgba(46, 230, 166, 0.4);
+  transform: scale(1.05);
+}
+
+.profile-info h3 {
+  font-size: 1.8rem;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.role-text {
+  color: #58a6ff;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* About Card */
+.about h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #2ee6a6;
+}
+
+.about ul {
+  margin-bottom: 15px;
+  list-style: none;
+}
+
+.about ul li {
+  font-family: "JetBrains Mono", Courier, monospace;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #c9d1d9;
+}
+
+/* Achievements Card */
+.achievements-card {
+  width: 100%;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 18px;
+  padding: 15px;
+  border-left: 3px solid rgba(46, 230, 166, 0.4);
+  border-radius: 4px;
+  background: rgba(46, 230, 166, 0.05);
+  transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+  background: rgba(46, 230, 166, 0.1);
+  border-left-color: rgba(46, 230, 166, 0.8);
+}
+
+.achievement-icon {
+  font-size: 2.2rem;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-title {
+  color: #2ee6a6;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+}
+
+.achievement-desc {
+  color: #8b949e;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Technical Stack Card */
+.tech-stack {
+  width: 100%;
+}
+
+.stack-category {
+  margin-bottom: 25px;
+}
+
+.stack-category h4 {
+  font-size: 1.1rem;
+  color: #58a6ff;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stack-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stack-item {
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.4);
+  color: #58a6ff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.stack-item:hover {
+  background: rgba(88, 166, 255, 0.2);
+  border-color: rgba(88, 166, 255, 0.8);
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
+}
+
+/* Cursor */
+.cursor {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #2ee6a6;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid #2ee6a6;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(46, 230, 166, 0.3);
+}
+
+/* Social Links */
+.social {
+  width: 100%;
+}
+
+.social h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #2ee6a6;
 }
 
 .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 30px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1em;
-    transition: all 0.3s ease;
-    color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  color: white;
+  background: rgba(46, 230, 166, 0.1);
+  border: 1px solid rgba(46, 230, 166, 0.3);
+  font-family: "JetBrains Mono", monospace;
 }
 
 .linkedin {
-    background: linear-gradient(135deg, #0077B5 0%, #005885 100%);
+  background: rgba(0, 119, 181, 0.2);
+  border: 1px solid rgba(0, 119, 181, 0.5);
 }
 
 .linkedin:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 119, 181, 0.4);
+  background: rgba(0, 119, 181, 0.3);
+  border-color: rgba(0, 119, 181, 0.8);
+  box-shadow: 0 0 15px rgba(0, 119, 181, 0.3);
+  transform: translateY(-2px);
 }
 
 .github {
-    background: linear-gradient(135deg, #333333 0%, #000000 100%);
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.4);
 }
 
 .github:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(88, 166, 255, 0.2);
+  border-color: rgba(88, 166, 255, 0.8);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .medium {
-    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  background: rgba(46, 230, 166, 0.1);
+  border: 1px solid rgba(46, 230, 166, 0.4);
 }
 
 .medium:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(46, 230, 166, 0.2);
+  border-color: rgba(46, 230, 166, 0.8);
+  box-shadow: 0 0 15px rgba(46, 230, 166, 0.3);
+  transform: translateY(-2px);
 }
 
 .tryhackme {
-    background: linear-gradient(135deg, #9D2B1F 0%, #6B1D14 100%);
+  background: rgba(255, 99, 71, 0.1);
+  border: 1px solid rgba(255, 99, 71, 0.4);
 }
 
 .tryhackme:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(157, 43, 31, 0.4);
+  background: rgba(255, 99, 71, 0.2);
+  border-color: rgba(255, 99, 71, 0.8);
+  box-shadow: 0 0 15px rgba(255, 99, 71, 0.3);
+  transform: translateY(-2px);
 }
 
-.icon {
-    margin-right: 10px;
-    font-size: 1.3em;
+.social-link .icon {
+  margin-right: 10px;
+  font-size: 1.2em;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 40px 20px;
-    }
+/* Education & Achievements Base Styles */
+.achievements p {
+  font-family: "JetBrains Mono", Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #8b949e;
+  margin-bottom: 8px;
+}
 
-    h1 {
-        font-size: 2em;
-    }
+.education ul li {
+  font-family: "JetBrains Mono", Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #8b949e;
+}
 
-    .social-link {
-        padding: 12px 20px;
-        font-size: 1em;
-    }
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .container {
+    padding: 30px;
+    gap: 25px;
+  }
 
-    .about-section {
-        padding: 20px;
-    }
+  .card {
+    padding: 25px;
+  }
+}
 
-    .about-section h2 {
-        font-size: 1.3em;
-    }
+@media (max-width: 768px) {
+  .terminal {
+    padding: 20px 24px;
+  }
 
-    .about-section p {
-        font-size: 0.95em;
-    }
+  .intro-title {
+    font-size: 22px;
+  }
+
+  .intro-description {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about ul li {
+    font-size: 1rem;
+  }
+
+  .achievement-icon {
+    font-size: 1.8rem;
+  }
+
+  .achievement-title {
+    font-size: 1rem;
+  }
 }
